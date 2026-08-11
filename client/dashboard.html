@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../client/css/global.css">
+  <link rel="stylesheet" href="../client/css/dashborad.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <title>dashboard</title>
+</head>
+
+<body>
+
+
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebarOverlay">
+      <div class="logo">
+        <i class="fa fa-book"></i>
+        <h1>Claasroom Booking</h1>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="dashboard.html">
+              <i class="fa-solid fa-house"></i>
+              แดชบอร์ด
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-calendar-plus"></i>
+              จองห้อง
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-clipboard-list"></i>
+              การจองของฉัน
+            </a>
+          </li>
+
+          <li>
+            <a href="login.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              ออกจากระบบ
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="page">
+      <header class="page-header">
+        <button type="button" class="barsmenu" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+        <div class="page-header-profile">
+          <span>สวัสดี Student</span>
+          <img style="width: 50px; height: 50px;" src="imges/profile.png" alt="avatar">
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="content-header">
+          <div class="wrapper-head">
+            <span>ค้นหาห้องเรียน</span>
+            <p>ค้นหาห้องว่างเเละเลือกช่วงเวลา</p>
+            <button>ค้นหาห้องว่าง👌</button>
+          </div>
+        </div>
+
+        <div class="content-status">
+          <div class="content-status-info">
+            <i class="fa-solid fa-house"></i>
+            <div class="content-status-info-more">
+              <span>ห้องทั้งหมด</span>
+              <h3>24</h3>
+            </div>
+          </div>
+
+          <div class="content-status-info">
+            <i class="fa-regular fa-calendar-days"></i>
+            <div class="content-status-info-more">
+              <span>ว่างวันนี้</span>
+              <h3>4</h3>
+            </div>
+          </div>
+
+          <div class="content-status-info">
+            <i class="fa-regular fa-clipboard"></i>
+            <div class="content-status-info-more">
+              <span>การจองของฉัน</span>
+              <h3>0</h3>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="room-section">
+
+          <span class="head-roomsection">ห้องว่างวันนี้</span>
+
+          <div class="room-wrapper">
+
+            <div class="room-cards">
+              <div class="imges-wrapper">
+                <img src="imges/Room.png" alt="room">
+              </div>
+              <div class="roomCardsHead">
+                <span>ห้อง IT-402</span>
+                <p>อาคารIT ชั้น 4</p>
+              </div>
+              <div class="cards-info">
+                <div class="cards-info-student">
+                  <p><i class="fa-solid fa-user"></i> รองรับ 30 คน</p>
+                </div>
+                <div class="cards-info-status">
+                  <p>✅ ว่าง</p>
+                </div>
+              </div>
+              <div class="btn-rooms">
+                <button>ดูรายละเอียด</button>
+              </div>
+            </div>
+
+
+            <div class="room-cards">
+              <div class="imges-wrapper">
+                <img src="imges/Room.png" alt="room">
+              </div>
+              <div class="roomCardsHead">
+                <span>ห้อง IT-402</span>
+                <p>อาคารIT ชั้น 4</p>
+              </div>
+
+              <div class="cards-info">
+                <div class="cards-info-student">
+                  <p><i class="fa-solid fa-user"></i> รองรับ 40 คน</p>
+                </div>
+                <div class="cards-info-status">
+                  <p>✅ ว่าง</p>
+                </div>
+              </div>
+              <div class="btn-rooms">
+                <button>ดูรายละเอียด</button>
+              </div>
+            </div>
+
+
+            <div class="room-cards">
+              <div class="imges-wrapper">
+                <img src="imges/Room.png" alt="room">
+              </div>
+              <div class="roomCardsHead">
+                <span>ห้อง IT-402</span>
+                <p>อาคารIT ชั้น 4</p>
+              </div>
+              <div class="cards-info">
+                <div class="cards-info-student">
+                  <p><i class="fa-solid fa-user"></i> รองรับ 30 คน</p>
+                </div>
+                <div class="cards-info-status unavailable">
+                  <p>⛔ ไม่ว่าง</p>
+                </div>
+              </div>
+              <div class="btn-rooms">
+                <button>ดูรายละเอียด</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="history-section">
+          <span>การจองล่าสุด</span>
+
+          <div class="history-section-wrapper">
+            <div class="history-info">
+
+              <div class="wrapper">
+                <div class="history-icon">
+                  <i class="fa-solid fa-calendar"></i>
+                </div>
+                <div class="history-text">
+                  <span>IT-401</span>
+                  <p>ห้อง IT-401</p>
+                  <p><i class="fa-solid fa-calendar"></i> 20 พ.ค. 2569</p>
+                  <p><i class="fa-regular fa-clock"></i> 10:00–12:00</p>
+                </div>
+              </div>
+
+
+
+              <div class="history-Status">
+                <span>จองแล้ว</span>
+              </div>
+
+
+
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/dsshborad.js"></script>
+</body>
+
+</html>

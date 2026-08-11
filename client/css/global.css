@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+  background-color: var(--bg);
+}
+
+:root {
+  --ink: #17304a;
+  --muted: #6f8193;
+  --line: #e5edf1;
+  --paper: #ffffff;
+  --bg: #eef1f6;
+  --primary: #1677c8;
+  --primary-dark: #0e5fa6;
+  --mint: #e3f7f0;
+  --mint-strong: #2aaa83;
+  --blue: #e7f2fc;
+  --amber: #fff3dc;
+  --danger: #dc5b5b;
+
+  --shadow: 0 14px 40px rgba(28, 63, 82, 0.08);
+}

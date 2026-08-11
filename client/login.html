@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เข้าสู่ระบบ</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/login-style.css">
+  <link rel="stylesheet" href="../client/css/global.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -16,7 +17,7 @@
 </head>
 
 <body>
-  <main>
+  <main> 
     <div class="main-wrapper">
       <section class="login-form">
         <div class="Claasroom_Booking">
@@ -46,12 +47,14 @@
             <label for="remember"><input type="checkbox" id="remember">จดจำฉันไว้</label>
             <a href="#">ลืมรหัสผ่าน?</a>
           </div>
-          <button type="submit" class="login">เข้าสู่ระบบ</button>
+          <button type="submit" id="login" onclick="loginPage()" class="login">เข้าสู่ระบบ</button>
         </form>
       </section>
       <section class="imges-show"></section>
     </div>
   </main>
+  
+  <script src="../client/js/login.js"></script>
 </body>
 
 </html>
