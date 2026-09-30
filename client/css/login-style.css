@@ -154,13 +154,17 @@ main {
         transform: translateY(-50%);
 
         width: auto;
-        padding: 4px;
+        padding: 4px 8px;
         border: none;
         background: transparent;
 
         color: var(--muted);
         cursor: pointer;
+        font: inherit;
+        font-size: .82rem;
       }
+
+      .password-field button span { margin-left: 4px; }
 
       .password-field input::-ms-reveal,
       .password-field input::-ms-clear {
@@ -180,6 +184,23 @@ main {
         font-size: clamp(12px, 3vw, 20px);
         font-weight: bold;
       }
+
+      .auth-message {
+        min-height: 22px;
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: .9rem;
+      }
+
+      .auth-message.error { color: var(--danger); }
+
+      .auth-switch {
+        margin-top: 18px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .auth-switch a { color: var(--primary); font-weight: bold; text-decoration: none; }
     }
 
 

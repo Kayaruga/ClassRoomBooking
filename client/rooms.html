@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/dashborad.css"><link rel="stylesheet" href="css/rooms.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <title>จองห้อง | Classroom Booking</title>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar"><div class="logo"><i class="fa-solid fa-book"></i><h1>Classroom Booking</h1></div>
+      <nav class="sidebar-nav" aria-label="เมนูหลัก"><ul><li><a href="dashboard.html"><i class="fa-solid fa-house"></i>แดชบอร์ด</a></li><li class="active"><a href="rooms.html"><i class="fa-solid fa-calendar-plus"></i>จองห้อง</a></li><li><a href="my-bookings.html"><i class="fa-solid fa-clipboard-list"></i>การจองของฉัน</a></li><li><a href="login.html" data-logout><i class="fa-solid fa-right-from-bracket"></i>ออกจากระบบ</a></li></ul></nav>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="page">
+      <header class="page-header"><button type="button" class="barsmenu" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false"><i class="fa-solid fa-bars"></i></button><div class="page-header-profile"><span>สวัสดี <b data-user-name>...</b></span><img src="imges/profile.png" alt="รูปโปรไฟล์ผู้ใช้"><button type="button" class="header-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> ออกจากระบบ</button></div></header>
+      <main class="content rooms-content">
+        <section class="rooms-title"><div><p class="eyebrow">ROOM BOOKING</p><h2>ค้นหาและจองห้องเรียน</h2><p>ระบบจะตรวจตารางเรียนและการจองเดิมให้ก่อนทุกครั้ง</p></div><div class="rooms-title-icon"><i class="fa-solid fa-door-open"></i></div></section>
+        <form class="room-filters" id="roomFilters">
+          <div class="filter-heading"><i class="fa-solid fa-sliders"></i><div><h3>เลือกวันและเวลาที่ต้องการ</h3><p>ห้องที่ชนกับตารางเรียนจะขึ้นสถานะ “ไม่ว่าง”</p></div></div>
+          <label class="search-field"><span>ค้นหาห้อง</span><div><i class="fa-solid fa-magnifying-glass"></i><input id="roomSearch" type="search" placeholder="เช่น IT-401"></div></label>
+          <label><span>อาคาร</span><select id="buildingFilter"><option value="">ทุกอาคาร</option><option value="อาคาร IT">อาคาร IT</option></select></label>
+          <label><span>วันที่ต้องการ <b>*</b></span><input id="bookingDate" type="date" required></label>
+          <label><span>เวลาเริ่ม <b>*</b></span><input id="startTime" type="time" value="08:30" required></label>
+          <label><span>เวลาสิ้นสุด <b>*</b></span><input id="endTime" type="time" value="10:30" required></label>
+          <label><span>จำนวนผู้ใช้</span><input id="capacityFilter" type="number" min="1" max="500" placeholder="เช่น 20 คน"></label>
+          <div class="filter-actions"><button type="reset" class="reset-button">ล้างค่า</button><button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i> ค้นหาห้องว่าง</button></div>
+        </form>
+        <section class="results-section" aria-labelledby="results-title"><div class="results-heading"><div><h3 id="results-title">ผลการค้นหาห้อง</h3><p id="resultCount">เลือกวันและเวลา แล้วกด “ค้นหาห้องว่าง”</p></div><div class="availability"><i class="fa-solid fa-shield-halved"></i> ตรวจสอบการจองซ้ำ</div></div><div class="room-results" id="roomResults"></div><p class="empty-state" id="emptyState"><i class="fa-regular fa-calendar"></i> ยังไม่ได้ค้นหาห้อง</p></section>
+      </main>
+    </div>
+  </div>
+  <dialog class="booking-dialog" id="bookingDialog"><form class="booking-dialog-card" id="bookingForm"><div class="dialog-heading"><div><p class="eyebrow">CONFIRM BOOKING</p><h3 id="dialogRoomName">ห้อง IT-401</h3></div><button class="close-dialog" type="button" id="closeDialog" aria-label="ปิด"><i class="fa-solid fa-xmark"></i></button></div><p class="dialog-time" id="dialogBookingTime"></p><p class="booking-for">จองในชื่อ: <b data-user-name></b></p><label><span>วัตถุประสงค์</span><input id="purpose" placeholder="เช่น ทำงานกลุ่ม" required></label><p class="form-message" id="formMessage" role="status"></p><div class="dialog-actions"><button type="button" class="reset-button" id="cancelBooking">ยกเลิก</button><button class="search-button" id="confirmBooking" type="submit">ยืนยันการจอง</button></div></form></dialog>
+  <script src="js/dsshborad.js?v=2"></script><script src="js/auth-guard.js?v=3"></script><script src="js/rooms.js?v=3"></script>
+</body>
+</html>

@@ -1,21 +1,4 @@
-
-
-const loginBtn = document.getElementById('login');
-
-
-function loginPage(even) {
-  event.preventDefault();
-  const username = document.getElementById('name').value;
-  const password = document.getElementById('password').value;
-  if (username === 'student' && password === '1234') {
-    window.location.href = 'dashboard.html'
-  } else {
-    alert('ชื่อหรือรหัสผ่านไม่ถูกต้อง');
-  }
-}
-
-
-
-
-
-
+const loginForm = document.getElementById('loginForm');
+const message = document.getElementById('authMessage');
+document.querySelectorAll('.toggle-password').forEach((button) => button.addEventListener('click', () => { const input = button.previousElementSibling; const isHidden = input.type === 'password'; input.type = isHidden ? 'text' : 'password'; button.querySelector('i').className = isHidden ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'; button.querySelector('span').textContent = isHidden ? 'ซ่อน' : 'แสดง'; }));
+loginForm.addEventListener('submit', async (event) => { event.preventDefault(); const button = loginForm.querySelector('[type="submit"]'); button.disabled = true; message.textContent = 'กำลังเข้าสู่ระบบ...'; try { const response = await fetch('../api/login.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username: document.getElementById('username').value, password: document.getElementById('password').value }) }); const data = await response.json(); if (!response.ok) throw new Error(data.error); window.location.replace('dashboard.html?v=4'); } catch (error) { message.className = 'auth-message error'; message.textContent = error.message || 'เข้าสู่ระบบไม่สำเร็จ'; button.disabled = false; } });

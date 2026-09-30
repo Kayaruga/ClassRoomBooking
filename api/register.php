@@ -1,0 +1,21 @@
+<?php
+require_once __DIR__ . '/config.php';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') respond(405, ['error' => 'Method not allowed']);
+$data = requestBody();
+$username = trim($data['username'] ?? '');
+$displayName = trim($data['displayName'] ?? '');
+$password = $data['password'] ?? '';
+if (!preg_match('/^[a-zA-Z0-9_]{3,30}$/', $username)) respond(400, ['error' => 'ชื่อผู้ใช้ต้องเป็นภาษาอังกฤษ ตัวเลข หรือ _ และยาว 3-30 ตัวอักษร']);
+if (mb_strlen($displayName) < 2 || mb_strlen($displayName) > 80) respond(400, ['error' => 'กรุณากรอกชื่อที่แสดง 2-80 ตัวอักษร']);
+if (strlen($password) < 6) respond(400, ['error' => 'รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร']);
+$pdo = database();
+$exists = $pdo->prepare('SELECT id FROM users WHERE username = ?');
+$exists->execute([$username]);
+if ($exists->fetch()) respond(409, ['error' => 'ชื่อผู้ใช้นี้ถูกใช้แล้ว']);
+$addUser = $pdo->prepare("INSERT INTO users (username, display_name, password_hash, role) VALUES (?, ?, ?, 'user')");
+$addUser->execute([$username, $displayName, password_hash($password, PASSWORD_DEFAULT)]);
+$id = (int) $pdo->lastInsertId();
+startSession();
+session_regenerate_id(true);
+$_SESSION['user'] = ['id' => $id, 'username' => $username, 'displayName' => $displayName, 'role' => 'user'];
+respond(201, ['user' => $_SESSION['user']]);
