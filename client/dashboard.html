@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,34 +10,85 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <title>แดชบอร์ด | Classroom Booking</title>
 </head>
+
 <body>
   <div class="dashboard">
     <aside class="sidebar">
-      <div class="logo"><i class="fa-solid fa-book"></i><h1>Classroom Booking</h1></div>
-      <nav class="sidebar-nav" aria-label="เมนูหลัก"><ul>
-        <li class="active"><a href="dashboard.html"><i class="fa-solid fa-house"></i>แดชบอร์ด</a></li>
-        <li><a href="rooms.html"><i class="fa-solid fa-calendar-plus"></i>จองห้อง</a></li>
-        <li><a href="my-bookings.html"><i class="fa-solid fa-clipboard-list"></i>การจองของฉัน</a></li>
-        <li><a href="login.html" data-logout><i class="fa-solid fa-right-from-bracket"></i>ออกจากระบบ</a></li>
-      </ul></nav>
+      <div class="logo"><i class="fa-solid fa-book"></i>
+        <h1>Classroom Booking</h1>
+      </div>
+      <nav class="sidebar-nav" aria-label="เมนูหลัก">
+        <ul>
+          <li class="active"><a href="dashboard.html"><i class="fa-solid fa-house"></i>แดชบอร์ด</a></li>
+          <li><a href="rooms.html"><i class="fa-solid fa-calendar-plus"></i>จองห้อง</a></li>
+          <li><a href="my-bookings.html"><i class="fa-solid fa-clipboard-list"></i>การจองของฉัน</a></li>
+          <li><a href="login.html" data-logout><i class="fa-solid fa-right-from-bracket"></i>ออกจากระบบ</a></li>
+        </ul>
+      </nav>
     </aside>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <div class="page">
       <header class="page-header">
-        <button type="button" class="barsmenu" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-        <div class="page-header-profile"><span>สวัสดี <b data-user-name>...</b></span><img src="imges/profile.png" alt="รูปโปรไฟล์ผู้ใช้"><button type="button" class="header-logout" data-logout><i class="fa-solid fa-right-from-bracket"></i> ออกจากระบบ</button></div>
+        <button type="button" class="barsmenu" id="menuToggle" aria-label="เปิดเมนู" aria-expanded="false"><i
+            class="fa-solid fa-bars"></i></button>
+        <div class="page-header-profile"><span>สวัสดี <b data-user-name>...</b></span><img src="imges/profile.png"
+            alt="รูปโปรไฟล์ผู้ใช้"><button type="button" class="header-logout" data-logout><i
+              class="fa-solid fa-right-from-bracket"></i> ออกจากระบบ</button></div>
       </header>
       <main class="dashboard-content">
-        <section class="dashboard-hero"><div><p class="eyebrow">CLASSROOM BOOKING</p><h2>พร้อมจองห้องเรียนแล้วหรือยัง?</h2><p>ตรวจสอบห้องว่างตามตารางเรียน และจองช่วงเวลาที่คุณต้องการได้ในที่เดียว</p><a href="rooms.html" class="hero-button"><i class="fa-solid fa-magnifying-glass"></i> ค้นหาห้องว่าง</a></div><i class="fa-solid fa-calendar-check hero-icon"></i></section>
-        <section class="dashboard-stats" aria-label="สรุปข้อมูล"><article class="stat-card blue"><i class="fa-solid fa-door-open"></i><div><span>ห้องทั้งหมด</span><strong id="totalRooms">-</strong></div></article><article class="stat-card green"><i class="fa-solid fa-calendar-day"></i><div><span>การจองวันนี้</span><strong id="todayBookings">-</strong></div></article><article class="stat-card purple"><i class="fa-solid fa-clipboard-list"></i><div><span>การจองของฉัน</span><strong id="myBookings">-</strong></div></article></section>
+        <section class="dashboard-hero">
+          <div>
+            <p class="eyebrow">CLASSROOM BOOKING</p>
+            <h2>พร้อมจองห้องเรียนแล้วหรือยัง?</h2>
+            <p>ตรวจสอบห้องว่างตามตารางเรียน และจองช่วงเวลาที่คุณต้องการได้ในที่เดียว</p><a href="rooms.html"
+              class="hero-button"><i class="fa-solid fa-magnifying-glass"></i> ค้นหาห้องว่าง</a>
+          </div><i class="fa-solid fa-calendar-check hero-icon"></i>
+        </section>
+        <section class="dashboard-stats" aria-label="สรุปข้อมูล">
+          <article class="stat-card blue"><i class="fa-solid fa-door-open"></i>
+            <div><span>ห้องทั้งหมด</span><strong id="totalRooms">-</strong></div>
+          </article>
+          <article class="stat-card green"><i class="fa-solid fa-calendar-day"></i>
+            <div><span>การจองวันนี้</span><strong id="todayBookings">-</strong></div>
+          </article>
+          <article class="stat-card purple"><i class="fa-solid fa-clipboard-list"></i>
+            <div><span>การจองของฉัน</span><strong id="myBookings">-</strong></div>
+          </article>
+        </section>
         <section class="available-today" aria-labelledby="availableTodayTitle">
-          <div class="available-heading"><div><p class="eyebrow">AVAILABLE TODAY</p><h3 id="availableTodayTitle">ห้องว่างวันนี้</h3><p id="availableTodayDate">กำลังตรวจสอบตารางเรียน...</p></div><a href="rooms.html">ดูห้องทั้งหมด <i class="fa-solid fa-arrow-right"></i></a></div>
+          <div class="available-heading">
+            <div>
+              <p class="eyebrow">AVAILABLE TODAY</p>
+              <h3 id="availableTodayTitle">ห้องว่างวันนี้</h3>
+              <p id="availableTodayDate">กำลังตรวจสอบตารางเรียน...</p>
+            </div><a href="rooms.html">ดูห้องทั้งหมด <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
           <div class="time-slots" id="timeSlots" aria-label="เลือกช่วงเวลา"></div>
           <div class="today-room-list" id="todayRoomList"></div>
         </section>
         <section class="dashboard-grid">
-          <article class="dashboard-panel schedule-panel"><div class="panel-heading"><div><h3>เริ่มต้นจองห้อง</h3><p>เลือกวันและเวลา แล้วระบบจะตรวจตารางเรียนให้ทันที</p></div><i class="fa-solid fa-wand-magic-sparkles"></i></div><ol class="booking-steps"><li><span>1</span> เลือกวันที่และเวลาที่ต้องการ</li><li><span>2</span> ค้นหาห้องที่ว่างจริง</li><li><span>3</span> ยืนยันการจอง</li></ol><a class="outline-button" href="rooms.html">ไปหน้าจองห้อง <i class="fa-solid fa-arrow-right"></i></a></article>
-          <article class="dashboard-panel recent-panel"><div class="panel-heading"><div><h3>การจองล่าสุดของฉัน</h3><p id="recentMessage">กำลังโหลดข้อมูล...</p></div><a href="my-bookings.html">ดูทั้งหมด</a></div><div id="recentBookings" class="recent-bookings"></div></article>
+          <article class="dashboard-panel schedule-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>เริ่มต้นจองห้อง</h3>
+                <p>เลือกวันและเวลา แล้วระบบจะตรวจตารางเรียนให้ทันที</p>
+              </div><i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <ol class="booking-steps">
+              <li><span>1</span> เลือกวันที่และเวลาที่ต้องการ</li>
+              <li><span>2</span> ค้นหาห้องที่ว่างจริง</li>
+              <li><span>3</span> ยืนยันการจอง</li>
+            </ol><a class="outline-button" href="rooms.html">ไปหน้าจองห้อง <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="dashboard-panel recent-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>การจองล่าสุดของฉัน</h3>
+                <p id="recentMessage">กำลังโหลดข้อมูล...</p>
+              </div><a href="my-bookings.html">ดูทั้งหมด</a>
+            </div>
+            <div id="recentBookings" class="recent-bookings"></div>
+          </article>
         </section>
       </main>
     </div>
@@ -45,4 +97,5 @@
   <script src="js/auth-guard.js?v=2"></script>
   <script src="js/dashboard.js?v=3"></script>
 </body>
+
 </html>

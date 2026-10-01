@@ -1,1 +1,27 @@
-.booking-status { display: inline-block; margin-left: 5px; padding: 4px 7px; border-radius: 999px; font-size: .72rem; vertical-align: middle; }.status-pending { color: #9a6200; background: #fff4cf; }.status-approved { color: #117342; background: #e6f8ed; }.status-rejected { color: #b63636; background: #fff0f0; }.rejection-reason { color: #b63636 !important; }
+.booking-status {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: .72rem;
+  vertical-align: middle;
+}
+
+.status-pending {
+  color: #9a6200;
+  background: #fff4cf;
+}
+
+.status-approved {
+  color: #117342;
+  background: #e6f8ed;
+}
+
+.status-rejected {
+  color: #b63636;
+  background: #fff0f0;
+}
+
+.rejection-reason {
+  color: #b63636 !important;
+}

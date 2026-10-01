@@ -164,7 +164,9 @@ main {
         font-size: .82rem;
       }
 
-      .password-field button span { margin-left: 4px; }
+      .password-field button span {
+        margin-left: 4px;
+      }
 
       .password-field input::-ms-reveal,
       .password-field input::-ms-clear {
@@ -192,7 +194,9 @@ main {
         font-size: .9rem;
       }
 
-      .auth-message.error { color: var(--danger); }
+      .auth-message.error {
+        color: var(--danger);
+      }
 
       .auth-switch {
         margin-top: 18px;
@@ -200,7 +204,11 @@ main {
         text-align: center;
       }
 
-      .auth-switch a { color: var(--primary); font-weight: bold; text-decoration: none; }
+      .auth-switch a {
+        color: var(--primary);
+        font-weight: bold;
+        text-decoration: none;
+      }
     }
 
 
@@ -222,14 +230,14 @@ main {
       grid-template-columns: 1fr;
       border: none;
       border-radius: 0px;
-      
+
 
       .login-form {
         width: 100%;
         min-height: 100vh;
         padding: 50px 24px;
         display: flex;
-        
+
 
 
         .Claasroom_Booking {

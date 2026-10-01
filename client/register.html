@@ -1,8 +1,52 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>สมัครใช้งาน | Classroom Booking</title>
-  <link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/login-style.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สมัครใช้งาน | Classroom Booking</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/login-style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body><main><div class="main-wrapper"><section class="login-form register-form"><div class="Claasroom_Booking"><div class="icon"><i class="fa-solid fa-book"></i></div><div class="Claasroom_Booking-info"><span>Classroom Booking</span><p>ระบบจองห้องเรียน</p></div></div><div class="login-info"><h1>สมัครใช้งาน</h1><p>สร้างบัญชีเพื่อเริ่มจองห้องเรียน</p></div><form class="form-detail" id="registerForm"><label for="displayName">ชื่อที่แสดง</label><input type="text" id="displayName" required maxlength="80" placeholder="เช่น ธนกฤต ใจดี"><label for="username">ชื่อผู้ใช้</label><input type="text" id="username" required minlength="3" maxlength="30" pattern="[A-Za-z0-9_]+" placeholder="อังกฤษ ตัวเลข หรือ _"><label for="password">รหัสผ่าน</label><div class="password-field"><input type="password" id="password" required minlength="6" autocomplete="new-password" placeholder="อย่างน้อย 6 ตัวอักษร"><button type="button" class="toggle-password" aria-label="แสดงรหัสผ่าน"><i class="fa-solid fa-eye"></i><span>แสดง</span></button></div><label for="confirmPassword">ยืนยันรหัสผ่าน</label><div class="password-field"><input type="password" id="confirmPassword" required minlength="6" autocomplete="new-password" placeholder="กรอกรหัสผ่านอีกครั้ง"><button type="button" class="toggle-password" aria-label="แสดงรหัสผ่าน"><i class="fa-solid fa-eye"></i><span>แสดง</span></button></div><p class="auth-message" id="authMessage" role="status"></p><button type="submit" class="login">สร้างบัญชี</button><p class="auth-switch">มีบัญชีอยู่แล้ว? <a href="login.html">เข้าสู่ระบบ</a></p></form></section><section class="imges-show"></section></div></main><script src="js/register.js?v=3"></script></body>
+
+<body>
+  <main>
+    <div class="main-wrapper">
+      <section class="login-form register-form">
+        <div class="Claasroom_Booking">
+          <div class="icon"><i class="fa-solid fa-book"></i></div>
+          <div class="Claasroom_Booking-info"><span>Classroom Booking</span>
+            <p>ระบบจองห้องเรียน</p>
+          </div>
+        </div>
+        <div class="login-info">
+          <h1>สมัครใช้งาน</h1>
+          <p>สร้างบัญชีเพื่อเริ่มจองห้องเรียน</p>
+        </div>
+        <form class="form-detail" id="registerForm"><label for="displayName">ชื่อที่แสดง</label><input type="text"
+            id="displayName" required maxlength="80" placeholder="เช่น ธนกฤต ใจดี"><label
+            for="username">ชื่อผู้ใช้</label><input type="text" id="username" required minlength="3" maxlength="30"
+            pattern="[A-Za-z0-9_]+" placeholder="อังกฤษ ตัวเลข หรือ _"><label for="password">รหัสผ่าน</label>
+          <div class="password-field"><input type="password" id="password" required minlength="6"
+              autocomplete="new-password" placeholder="อย่างน้อย 6 ตัวอักษร"><button type="button"
+              class="toggle-password" aria-label="แสดงรหัสผ่าน"><i
+                class="fa-solid fa-eye"></i><span>แสดง</span></button></div><label
+            for="confirmPassword">ยืนยันรหัสผ่าน</label>
+          <div class="password-field"><input type="password" id="confirmPassword" required minlength="6"
+              autocomplete="new-password" placeholder="กรอกรหัสผ่านอีกครั้ง"><button type="button"
+              class="toggle-password" aria-label="แสดงรหัสผ่าน"><i
+                class="fa-solid fa-eye"></i><span>แสดง</span></button></div>
+          <p class="auth-message" id="authMessage" role="status"></p><button type="submit"
+            class="login">สร้างบัญชี</button>
+          <p class="auth-switch">มีบัญชีอยู่แล้ว? <a href="login.html">เข้าสู่ระบบ</a></p>
+        </form>
+      </section>
+      <section class="imges-show"></section>
+    </div>
+  </main>
+  <script src="js/register.js?v=3"></script>
+</body>
+
 </html>
